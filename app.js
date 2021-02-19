@@ -2,13 +2,13 @@ import express from 'express';
 import mongoose from 'mongoose';
 import { config } from './config/mongo.js';
 import 'dotenv/config.js';
+import { details }from './routes/getDetails.js'
+
 
 const app = express();
 
-//Routes
-app.get('/', (req,res) => {
-    res.send('Hello World');
-})
+//Hit the Routes folder
+app.use('/details', details);
 
 
 //  Connect to db
