@@ -1,0 +1,20 @@
+import mongoose from 'mongoose';
+// var ObjectId = require('mongodb').ObjectID;
+const Schema = mongoose.Schema;
+
+
+
+
+const UserSchema = new Schema({
+    firstName: { type: String, required: true },
+    lastName: { type: String, required: true },
+    email: { type: String, required: true },
+    posts: [{
+        type: Schema.Types.ObjectId, 
+        ref: 'Posts'
+    }]
+}, { collection: 'Users' });
+
+const Users = mongoose.model('Users', UserSchema);
+
+export default Users;
