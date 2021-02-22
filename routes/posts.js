@@ -1,5 +1,5 @@
 import express from 'express';
-import { coverPosts, stylePosts, allPosts } from '../controllers/postController.js';
+import { coverPosts, stylePosts, allPosts, culturePosts, musicPosts, videoPosts, createPost } from '../controllers/postController.js';
 
 const router = express.Router();
 
@@ -7,6 +7,12 @@ const router = express.Router();
 router.get('/', allPosts)
       .get('/covers', coverPosts)
       .get('/style', stylePosts)
+      .get('/culture', culturePosts)
+      .get('/music', musicPosts)
+      .get('/videos', videoPosts)
+
+// Create a post
+router.post('/create-post', createPost)      
 
 
 export default router;
