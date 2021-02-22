@@ -2,9 +2,7 @@ import mongoose from 'mongoose';
 // var ObjectId = require('mongodb').ObjectID;
 const Schema = mongoose.Schema;
 
-
-
-
+// Model for Users
 const UserSchema = new Schema({
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
