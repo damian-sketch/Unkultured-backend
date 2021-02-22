@@ -16,7 +16,7 @@ app.use(bodyparser.json())
 app.use('/users', users);
 
 //Hit the  posts route
-app.use('/posts', posts);
+app.use('/', posts);
 
 //  Connect to db
 mongoose.connect(process.env.DB_CONNECTION, config, (err) => {
