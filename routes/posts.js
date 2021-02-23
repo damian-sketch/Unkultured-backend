@@ -1,5 +1,6 @@
 import express from 'express';
 import { coverPosts, stylePosts, allPosts, culturePosts, musicPosts, videoPosts, createPost } from '../controllers/postController.js';
+import { authenticateToken }from '../controllers/userController.js'
 
 const router = express.Router();
 
@@ -12,7 +13,7 @@ router.get('/', allPosts)
       .get('/videos', videoPosts)
 
 // Create a post
-router.post('/create-post', createPost)      
+router.post('/create-post', authenticateToken, createPost)      
 
 
 export default router;

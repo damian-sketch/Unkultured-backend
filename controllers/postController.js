@@ -54,8 +54,7 @@ async function culturePosts(req, res) {
 async function createPost(req, res) {
    console.log(req);
    try {
-       if (!req.body.title && !req.body.content && !req.body.category) {
-         console.log('There is an error')  
+       if (!req.body.title && !req.body.content && !req.body.category) {  
          return res.status(403).end();
            
        }

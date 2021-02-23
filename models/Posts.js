@@ -6,10 +6,10 @@ const PostSchema = new Schema({
     title: { type: String, required: true },
     content: { type: String, required: true },
     category: { type: String, required: true},
-    author: [{
+    author: {
         type: Schema.Types.ObjectId,
         ref: 'Users'
-    }]
+    }
 }, { collection: 'Posts' });
 
 const Posts = mongoose.model('Posts', PostSchema);
