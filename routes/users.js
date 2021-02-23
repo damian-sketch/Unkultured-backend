@@ -1,9 +1,9 @@
 import express from 'express';
-import { getToken, createUser } from '../controllers/userController.js';
+import { getToken, createUser, authenticateToken } from '../controllers/userController.js';
 const router = express.Router();
 
-// CREATE A USER
-router.post('/create-user', createUser) 
+// Create a user
+router.post('/create-user', authenticateToken, createUser) 
 
 // Get login token
 router.post('/login', getToken)
