@@ -5,9 +5,12 @@ import 'dotenv/config.js';
 import users from './routes/users.js'
 import posts from './routes/posts.js'
 import bodyparser from 'body-parser';
-
+import cors from 'cors';
 
 const app = express();
+
+//Configure CORS for all requests
+app.use(cors())
 
 //parse application/json
 app.use(bodyparser.json())
