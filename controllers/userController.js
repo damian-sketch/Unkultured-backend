@@ -1,24 +1,6 @@
-import Users from '../models/Users.js';
 import 'dotenv/config.js';
 import jwt from 'jsonwebtoken';
 
-// Create a user
-async function createUser(req, res) {
-    console.log(req);
-    try {
-        if (!req.body.firstName && !req.body.email) {
-            return res.status(403).end();
-        }
-
-        const newUser = new Users(req.body);
-        const user = await newUser.save();
-        res.status(201).json(user);
-        
-    }
-    catch (err) {
-    console.log(err);
-    }
-}
 
 // Generate access token for given user
 function getToken(req, res) {
@@ -42,4 +24,4 @@ function authenticateToken(req, res, next) {
     })
 }
 
-export { createUser, getToken, authenticateToken };
+export { getToken, authenticateToken };
