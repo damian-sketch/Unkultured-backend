@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon --watch . --exec babel-node -- ./db/dev/dbConnection app.js"
+    "start": "nodemon --watch . --exec babel-node -- app.js"
   },
   "author": "Cedric Muuo",
   "license": "ISC",

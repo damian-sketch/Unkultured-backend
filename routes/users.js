@@ -3,7 +3,7 @@ import { getToken, authenticateToken } from '../controllers/userController.js';
 const router = express.Router();
 
 // Create a user
-router.post('/create-user', authenticateToken) 
+router.get('/create', authenticateToken) 
 
 // Get login token
 router.post('/login', getToken)

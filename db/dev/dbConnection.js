@@ -1,13 +1,6 @@
 import pool from './pool.js';
 
- pool.connect((err) => {
-    if(err){
-        console.log(err);
-    }
-    else{
-      console.log('connected baby!')
-    }
- });
+
   
 
 
@@ -18,8 +11,7 @@ const createUserTable = () => {
     email VARCHAR(100) UNIQUE NOT NULL, 
     first_name VARCHAR(100), 
     last_name VARCHAR(100), 
-    password VARCHAR(100) NOT NULL,
-    created_on DATE NOT NULL)`;
+    password VARCHAR(100) NOT NULL)`;
   
     pool.query(userCreateQuery)
       .then((res) => {
@@ -38,8 +30,7 @@ const createPostTable = () => {
     (id SERIAL PRIMARY KEY, 
     title VARCHAR(100) NOT NULL, 
     body VARCHAR(100) NOT NULL,
-    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-    created_on DATE NOT NULL)`;
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,)`;
   
     pool.query(postCreateQuery)
       .then((res) => {
