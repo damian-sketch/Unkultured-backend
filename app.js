@@ -31,11 +31,12 @@ app.use('/users', users);
 
 
 //Listen to the server on port 8000
-app.listen(3000, (err) => {
+const port = process.env.port || 3000;
+app.listen(port, (err) => {
     if (err){
     console.log('err')
     }
     else{
-        console.log('Running on port 3000!')
+        console.log('Running!')
     }
 });
